@@ -17,6 +17,12 @@ namespace impl {
 template <typename DType, typename IdType>
 NDArray IndexSelectCPUFromGPU(NDArray array, IdArray index);
 
+template <typename DType, typename IdType>
+NDArray IndexSelectFromCache(NDArray host_rows, NDArray cached_rows, IdArray index, IdArray row_pos_map);
+
+template <typename DType, typename IdType>
+void IndexSelectToCache(NDArray host_rows, NDArray cached_rows, NDArray input, IdArray index, IdArray row_pos_map);
+
 }  // namespace impl
 }  // namespace aten
 }  // namespace dgl
